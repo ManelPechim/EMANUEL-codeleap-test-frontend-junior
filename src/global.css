@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+:root {
+  margin: 0;
+  padding: 0;
+  background-color: #DDDD;
+  font-family: 'Roboto';
+}
+
+.bg-primary {
+  background-color: #7695EC;
+}
+
