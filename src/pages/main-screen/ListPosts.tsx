@@ -68,12 +68,12 @@ export default function ListPosts ({ postsData }: PostsProps) {
     <>
       <main className="flex flex-col items-center gap-6 mb-6">
         {postsMap.map((Post, index) => (
-          <section key={index} className="max-w-[752px] max-h-[316px] wrap-break-word text-wrap">        
-            <header className="flex overflow-hidden max-w-[752px] max-h-[70px] items-center justify-between py-4 px-6 bg-primary rounded-t-2xl">
+          <section key={index} className="max-w-[752px] max-h-[316px] wrap-break-word text-wrap overflow-hidden">        
+            <header className="flex  overflow-y-auto max-w-[752px] max-h-[70px] items-center justify-between py-4 px-6 bg-primary rounded-t-2xl">
               <h1 className=" w-full h-full max-w-[500px] items-center text-white font-semibold text-[22px] ">
                 {Post.title}
               </h1>
-              <aside className="flex items-center text-white gap-6">
+              <aside className="flex sticky top-1 items-center text-white gap-6">
                 {currentUser?.username === Post.username && 
                 <>
                   <button 
@@ -95,8 +95,8 @@ export default function ListPosts ({ postsData }: PostsProps) {
                 }
               </aside>
             </header>
-            <div key={index} className="w-[752px] h-[246px] bg-white border border-t-0 border-[#999999] rounded-2xl rounded-t-none">
-              <div className="flex flex-col py-4 px-6 text-[18px] gap-4">
+            <div className="w-[752px] h-[246px] bg-white border border-t-0 border-[#999999] rounded-2xl rounded-t-none overflow-y-auto">
+              <div className="flex flex-col py-4 px-6 text-[18px] gap-4 ">
                 <h2 className="flex justify-between text-[#777777] font-bold">
                   <p>@{Post.username}</p>
                   <p className="font-normal">{formatToMinutes(Post.created_datetime)}</p>
